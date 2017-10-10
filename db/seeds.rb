@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do { |_|Task.new(name:"Task#{@id}").save }
+5.times { |_|Task.new(name:"Task#{@id}").save }
