@@ -5,8 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Task.create(name:"Task1")
-Task.create(name:"Task2")
-Task.create(name:"Task3")
-Task.create(name:"Task4")
-Task.create(name:"Task5")
+5.times do { |_|Task.new(name:"Task#{@id}").save }

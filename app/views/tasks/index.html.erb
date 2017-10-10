@@ -4,6 +4,6 @@
 <p><%= link_to "New Task", new_task_path %></p>
 <ul>
   <% @tasks.each do |x| %>
-  <li><strong><%= x.done ? "[X]" : "[_]" %></strong> <%= x.name %> | <%= link_to "View details", task_path(x) %> | <%= link_to "edit", edit_task_path(x) %> | <%= link_to "Delete this task",{controller:"tasks",action:"destroy",id:x.id}, method: :delete %></li>
+  <li><strong><%= x.done ? "[X]" : "[_]" %></strong> <%= x.name %> | <%= link_to "View details", task_path(x) %> | <%= link_to "edit", edit_task_path(x) %> | <%= link_to "Delete this task", task_path(x), method: :delete %></li>
   <% end %>
 </ul>
