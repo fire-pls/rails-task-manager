@@ -5,4 +5,4 @@
 <p><%= @task.description %></p>
 <p>status: <%= @task.done ? "Complete" : "Incomplete" %></p>
 <hr>
-<%= link_to "Delete this task", delete_task_path(@task) %>
+<%= link_to "Delete this task", controller:"tasks",action:"destroy",id:@task, method: :delete %>
