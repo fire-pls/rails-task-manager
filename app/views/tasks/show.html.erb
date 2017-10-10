@@ -3,6 +3,7 @@
 <hr>
 <h1><%= @task.name %></h1>
 <p><%= @task.description %></p>
+<p>Created: <%= @task.created_at.getlocal.strftime("%m-%e-%y %H:%M") %></p>
 <p>status: <%= @task.done ? "Complete" : "Incomplete" %></p>
 <hr>
 <%= link_to "Delete this task", task_path(@task), method: :delete %>
