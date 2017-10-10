@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    member do
+      patch 'toggle', to: 'tasks#toggle_status', as: :toggle
+    end
+  end
   root 'tasks#index'
 end
 # root 'tasks#index'

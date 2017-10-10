@@ -34,6 +34,13 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def toggle_status
+    @task = Task.find(params[:id])
+    @task.done = @task.done? ? false : true
+    @task.save
+    redirect_to tasks_path
+  end
+
   private
   def task_params
     params.require(:task).permit(:description, :name, :done)
