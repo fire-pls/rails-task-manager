@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
-  get 'tasks/index'
+  #master list of tasks
+  get 'tasks', to: 'tasks#index', as: 'tasks'
 
-  get 'tasks/show'
+  #post new task to list
+  post 'tasks', to: 'tasks#create'
 
-  get 'tasks/new'
+  #show form to make new task
+  get 'tasks/new', to: 'tasks#new', as: 'new_task'
 
-  get 'tasks/create'
+  #show pre-filled form to change a task
+  get 'tasks/:id/edit', to: 'tasks#edit', as: 'edit_task'
 
-  get 'tasks/edit'
+  #show specific task
+  get 'tasks/:id', to: 'tasks#show', as: 'task'
 
-  get 'tasks/update'
+  #change specified task info
+  patch 'tasks/:id', to: 'tasks#update'
 
-  get 'tasks/destroy'
+  #delete specified id
+  delete 'tasks/:id', to: 'tasks#destroy', as: 'delete_task'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
